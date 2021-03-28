@@ -1,0 +1,24 @@
+data:
+  name: 'MelanomaDataset'
+  dir: './input/256x256/'
+
+model:
+  name: 'efficientnet'
+  params:
+    model_name: 'efficientnet-b4'
+    num_classes: 1
+    in_channels: 3
+    num_metas: 2
+
+train:
+  out_dir: './output/eff4_256x256_5fold/'
+  batch_size: 24
+  num_epochs: 10
+  num_folds: 5
+
+valid:
+  batch_size: 24
+
+test:
+  batch_size: 24
+

@@ -1,0 +1,29 @@
+data:
+  name: 'MelanomaDataset'
+  dir: './input/128x128/'
+
+model:
+  name: 'efficientnet'
+  params:
+    model_name: 'efficientnet-b0'
+    num_classes: 1
+    in_channels: 3
+    num_metas: 2
+
+train:
+  out_dir: './output/eff0_128x128_5fold/'
+  batch_size: 256
+  num_epochs: 10
+  num_folds: 5
+
+valid:
+  batch_size: 256
+  fold0_cp: epoch_0003.pth
+  fold1_cp: epoch_0004.pth
+  fold2_cp: epoch_0003.pth
+  fold3_cp: epoch_0003.pth
+  fold4_cp: epoch_0004.pth
+
+test:
+  batch_size: 256
+

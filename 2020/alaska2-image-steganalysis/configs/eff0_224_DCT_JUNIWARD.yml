@@ -1,0 +1,31 @@
+data:
+  name: 'DCT_Dataset'
+  cover_dir: '../input/alaska2-image-steganalysis/Cover/'
+  stego_dir: '../input/alaska2-image-steganalysis/JUNIWARD/'
+  params:
+    crop_size: 224
+
+model:
+  name: 'efficientnet'
+  params:
+    model_name: 'efficientnet-b0'
+    num_classes: 1
+    in_channels: 3
+
+train:
+  out_dir: './results/eff0_224_DCT_JUNIWARD/'
+  batch_size: 40
+  num_epochs: 20
+
+eval:
+  batch_size: 48
+
+optimizer:
+  name: 'AdamW'  
+
+scheduler:
+  name: 'LambdaLR'
+
+loss:
+  name: 'binary_cross_entropy_with_logits_loss'
+

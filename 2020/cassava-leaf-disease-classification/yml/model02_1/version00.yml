@@ -1,0 +1,19 @@
+model:
+  name: 'efficientnet'
+  params:
+    model_name: 'efficientnet-b0'
+    in_channels: 3
+    num_classes: 1
+
+dataset:
+  name: 'CassavaDataset'
+  train_csv: './input/cassava-leaf-disease-classification/train.csv'
+  image_dir: './input/cassava-leaf-disease-classification/train_images_260x260'
+
+train:
+  folds: 5
+  epochs: 100
+  batch_size: 96
+
+test:
+  batch_size: 96
